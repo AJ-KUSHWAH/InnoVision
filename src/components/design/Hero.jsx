@@ -39,6 +39,7 @@ export const BackgroundCircles = ({ parallaxRef }) => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    console.log("BackgroundCircles mounted");
     setMounted(true);
   }, []);
 

@@ -1,13 +1,12 @@
-import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
-import { brainwave } from "../assets";
+import { visionIcon } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
-import { visionIcon } from "../assets";
+import { useState } from "react";
 
 const Header = () => {
   const pathname = useLocation();
@@ -36,8 +35,9 @@ const Header = () => {
       }`}
     >
       <div className="flex items-center px-5 lg:px-7.5 xl:px-10 max-lg:py-4">
-        <a className="block w-[12rem] xl:mr-8" href="#hero">
-          <img src={visionIcon} width={60} height={80} alt="visionIcon" />
+        <a className=" w-[12rem] xl:mr-8 flex" href="#hero">
+          <img src={visionIcon} width={60} height={40} alt="Brainwave" />
+          <h1 className="m-auto font-bold text-2xl">InnoVision</h1>
         </a>
 
         <nav
@@ -49,7 +49,7 @@ const Header = () => {
             {navigation.map((item) => (
               <a
                 key={item.id}
-                href="item.url"
+                href={item.url}
                 onClick={handleClick}
                 className={`block relative font-code text-2xl uppercase text-n-1 transition-colors hover:text-color-1 ${
                   item.onlyMobile ? "lg:hidden" : ""
